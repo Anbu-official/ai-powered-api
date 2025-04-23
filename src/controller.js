@@ -47,8 +47,8 @@ const login = async (req, res) => {
       res
         .cookie("jwt-token", token, {
           httpOnly: true,
-          sameSite: "Lax",
-          secure: false,
+          secure: true,
+          sameSite: "None",
           maxAge: 3600000,
         })
         .send({ message: "Login Successfully" });
